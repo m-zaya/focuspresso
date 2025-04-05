@@ -2,19 +2,29 @@
 
 ## For the gang
 Step 1: Be sure you are in the focuspresso/src directory:
-    ```cd src```
+```
+cd src
+```
 
 Step 2:
-    ```npm init -y```
+```
+npm init -y
+```
 
 Step 3:
-    ```npm install```
+```
+npm install
+```
 
 Step 4:
-    ```npm install expo```
+```
+npm install expo
+```
 
 Step 5:
-    ```npx expo start```
+```
+npx expo start
+```
 
 ---
 
