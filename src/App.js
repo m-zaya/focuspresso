@@ -1,10 +1,17 @@
 // App.js - Main entry point
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, StatusBar } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { View, Text, StyleSheet, TouchableOpacity, StatusBar } from 'react-native';
 
-export default function App() {
+// Import SplashScreen component
+import SplashScreen from './screens/SplashScreen';
+
+// Create a placeholder for the Tasks screen (using your current App content)
+const TasksScreen = () => {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#9370DB" />
       <View style={styles.content}>
         <Text style={styles.title}>Focuspresso</Text>
@@ -14,7 +21,29 @@ export default function App() {
           <Text style={styles.buttonText}>Add Task</Text>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </View>
+  );
+};
+
+// Create a stack navigator
+const Stack = createStackNavigator();
+
+export default function App() {
+  return (
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Stack.Navigator 
+          initialRouteName="Splash"
+          screenOptions={{
+            headerShown: false, // Hide the navigation header
+          }}
+        >
+          {/* Define screens in the stack */}
+          <Stack.Screen name="Splash" component={SplashScreen} />
+          <Stack.Screen name="Tasks" component={TasksScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
 
