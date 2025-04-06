@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
       width: 56,
       height: 56,
       borderRadius: 28,
-      backgroundColor: '#9370DB',
+      backgroundColor: '#b5d1d7',
       justifyContent: 'center',
       alignItems: 'center',
       elevation: 5,
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
       fontSize: 32,
-      color: 'white',
+      color: '#2d2d4a',
       fontWeight: 'bold',
       marginTop: -2, // Adjust vertical alignment
     },

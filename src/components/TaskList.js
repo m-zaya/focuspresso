@@ -188,6 +188,7 @@ const TaskList = ({ tasks, onCompleteTask, onEditTask }) => {
 const styles = StyleSheet.create({
   list: {
     width: '100%',
+    backgroundColor: '#d8e2e4',
   },
   emptyList: {
     flex: 1,
