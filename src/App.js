@@ -1,4 +1,5 @@
 // App.js - Main entry point
+import 'react-native-gesture-handler'; // This import must come first
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -7,25 +8,9 @@ import { View, Text, StyleSheet, TouchableOpacity, StatusBar } from 'react-nativ
 
 // Import SplashScreen component
 import SplashScreen from './screens/SplashScreen';
+import BottomTabNavigator from './navigation/BottomTabNavigator';
 
-// Create a placeholder for the Tasks screen (using your current App content)
-const TasksScreen = () => {
-  return (
-    <View style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="#9370DB" />
-      <View style={styles.content}>
-        <Text style={styles.title}>Focuspresso</Text>
-        <Text style={styles.subtitle}>Stay focused, one task at a time</Text>
-        
-        <TouchableOpacity style={styles.button} onPress={() => alert('Button pressed!')}>
-          <Text style={styles.buttonText}>Add Task</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
-};
-
-// Create a stack navigator
+//  ================ stack navigator ================
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -40,13 +25,14 @@ export default function App() {
         >
           {/* Define screens in the stack */}
           <Stack.Screen name="Splash" component={SplashScreen} />
-          <Stack.Screen name="Tasks" component={TasksScreen} />
+          <Stack.Screen name="Main" component={BottomTabNavigator} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
   );
 }
 
+//  ================== styles ==================
 const styles = StyleSheet.create({
   container: {
     flex: 1,

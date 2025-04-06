@@ -4,10 +4,10 @@
     "slug": "focuspresso",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/coffee-icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/coffee-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#9370DB"
     },

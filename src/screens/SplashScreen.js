@@ -19,7 +19,7 @@ const SplashScreen = ({ navigation }) => {
   // Function to handle the press event on the splash screen
   const handlePress = () => {
     // Navigate to the Tasks screen using React Navigation
-    navigation.navigate('Tasks');
+    navigation.navigate('Main');
   };
 
   return (
