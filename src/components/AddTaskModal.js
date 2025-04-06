@@ -210,6 +210,7 @@ React.useEffect(() => {
           <Picker
             selectedValue={value.hours.toString()}
             style={styles.timePicker}
+            itemStyle={styles.timePickerItem}
             onValueChange={(itemValue) => 
               onChange({ ...value, hours: parseInt(itemValue) })
             }
@@ -224,6 +225,7 @@ React.useEffect(() => {
           <Picker
             selectedValue={value.minutes.toString()}
             style={styles.timePicker}
+            itemStyle={styles.timePickerItem}
             onValueChange={(itemValue) => 
               onChange({ ...value, minutes: parseInt(itemValue) })
             }
@@ -593,26 +595,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 12,
   },
-  timePickerContainer: {
-    marginBottom: 16,
-  },
-  timePickerLabel: {
-    fontSize: 14,
-    marginBottom: 8,
-    color: '#2D2D4A',
-  },
-  timeInputRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  timeInputGroup: {
-    flex: 1,
-    marginHorizontal: 4,
-  },
-  timePicker: {
-    height: 100,
-    backgroundColor: 'white',
-  },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -649,6 +631,34 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
+  },
+  timePickerContainer: {
+    marginBottom: 16,
+  },
+  timePickerLabel: {
+    fontSize: 14,
+    marginBottom: 8,
+    color: '#2D2D4A',
+  },
+  timeInputRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  timeInputGroup: {
+    flex: 1,
+    marginHorizontal: 4,
+    height: 120, // Constrain the height
+    overflow: 'hidden', // Prevent overflow
+  },
+  timePicker: {
+    width: '100%',
+    height: 120,
+    backgroundColor: 'white',
+  },
+  timePickerItem: {
+    fontSize: 16,
+    height: 120, // Match the height of the picker
+    color: '#2D2D4A',
   },
 });
 
